@@ -22,12 +22,12 @@ def after_request(response):
 def main():
     return render_template("index.html")
 
-@app.route("/turn-on")
+@app.route("/turn-on", methods=["post"])
 def turn_on():
     led.on()
     return jsonify({"status" : "success"})
 
-@app.route("/turn-off")
+@app.route("/turn-off", methods=["post"])
 def turn_off():
     led.off()
     return jsonify({"status" : "success"}) 

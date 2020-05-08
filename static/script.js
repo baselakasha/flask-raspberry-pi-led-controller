@@ -4,7 +4,8 @@ $(document).ready(() => {
         if(led_status){
             // Turn OFF
             $.ajax({
-                url: "/turn-off"
+                url: "/turn-off",
+                method: "post"
             }).done((data) => {
                 if(data.status == "success"){
                     led_status = false;
@@ -15,7 +16,8 @@ $(document).ready(() => {
         else{
             // Turn ON
             $.ajax({
-                url: "/turn-on"
+                url: "/turn-on",
+                method: "post"
             }).done((data) => {
                 if(data.status == "success"){
                     led_status = true;
